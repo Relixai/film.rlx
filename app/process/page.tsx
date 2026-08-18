@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import Image from "next/image";
 import Link from "next/link";
 import { SiteFooter } from "../_components/SiteFooter";
 import { SiteNav } from "../_components/SiteNav";
@@ -23,6 +24,9 @@ export default function ProcessPage() {
       <section className="page-hero process-hero">
         <h1>Fast enough to explore.<br /><em>Rigorous enough to ship.</em></h1>
         <p className="page-lede">A visible, director-led process built for a medium that changes every week. You see the work early, make the important decisions sooner, and always know what happens next.</p>
+      </section>
+      <section className="page-image" aria-label="The Relix visual development process">
+        <Image src="/editorial/process.jpg" alt="A sequence of transparent film panels evolving from sketches into a finished cinematic landscape" fill sizes="100vw" priority />
       </section>
 
       <section className="process-flow-section">

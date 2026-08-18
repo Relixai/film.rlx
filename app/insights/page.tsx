@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import Image from "next/image";
 import Link from "next/link";
 import { SiteFooter } from "../_components/SiteFooter";
 import { SiteNav } from "../_components/SiteNav";
@@ -22,6 +23,9 @@ export default function InsightsPage() {
       <section className="page-hero insights-hero">
         <h1>Ideas for a<br /><em>moving medium.</em></h1>
         <p className="page-lede">Field notes on the craft, systems, and decisions behind AI video that earns attention instead of borrowing it.</p>
+      </section>
+      <section className="page-image" aria-label="A visual archive of Relix ideas">
+        <Image src="/editorial/insights.jpg" alt="Glowing cinematic frames orbiting a dark sculptural sphere in a gallery" fill sizes="100vw" priority />
       </section>
 
       <section className="insights-index" aria-label="Latest insights">

@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import Image from "next/image";
 import Link from "next/link";
 import { SiteFooter } from "../_components/SiteFooter";
 import { SiteNav } from "../_components/SiteNav";
@@ -22,6 +23,9 @@ export default function ServicesPage() {
       <section className="page-hero page-hero-orange">
         <h1>From first thought<br /><em>to every format.</em></h1>
         <p className="page-lede">One senior creative team, built around your challenge. Strategy, direction, AI production, edit, sound, and delivery under one roof.</p>
+      </section>
+      <section className="page-image" aria-label="A Relix product film in production">
+        <Image src="/editorial/services.jpg" alt="A cinema camera filming a sculptural glass bottle in a surreal coral landscape" fill sizes="100vw" priority />
       </section>
       <section className="offer-grid">
         {offers.map((offer) => (

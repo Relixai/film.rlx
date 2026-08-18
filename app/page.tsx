@@ -30,7 +30,7 @@ export default function Home() {
         <div className="hero-copy">
           <h1>Impossible stories.<br /><em>Made visible.</em></h1>
           <p className="hero-lede">We combine generative AI, film craft, and bold creative direction to make video that moves at the speed of culture.</p>
-          <Link className="primary-cta" href="/work">View our work <span aria-hidden="true">↗</span></Link>
+          <Link className="primary-cta" href="/services">Explore our services <span aria-hidden="true">↗</span></Link>
         </div>
       </section>
 
@@ -49,19 +49,15 @@ export default function Home() {
         </div>
 
         <article className="project project-large">
-          <Link className="project-link" href={`/work/${projects[0].slug}`}>
-            <ProjectArtwork project={projects[0]} />
-            <div className="project-meta"><div><h3>{projects[0].title}</h3></div><p>{projects[0].summary}</p><span className="project-arrow" aria-hidden="true">↗</span></div>
-          </Link>
+          <ProjectArtwork project={projects[0]} />
+          <div className="project-meta"><div><h3>{projects[0].title}</h3></div><p>{projects[0].summary}</p></div>
         </article>
 
         <div className="project-grid">
           {projects.slice(1).map((project, index) => (
             <article className={`project${index === 1 ? " project-offset" : ""}`} key={project.slug}>
-              <Link className="project-link" href={`/work/${project.slug}`}>
-                <ProjectArtwork project={project} />
-                <div className="project-meta"><div><h3>{project.title}</h3></div><p>{project.summary}</p><span className="project-arrow" aria-hidden="true">↗</span></div>
-              </Link>
+              <ProjectArtwork project={project} />
+              <div className="project-meta"><div><h3>{project.title}</h3></div><p>{project.summary}</p></div>
             </article>
           ))}
         </div>

@@ -31,7 +31,7 @@ export default function ContactPage() {
         <div><p>London · New York · Los Angeles</p></div>
         <div><p><a href="https://www.instagram.com/relix.ai">Instagram</a> · <a href="https://www.linkedin.com/company/relix">LinkedIn</a></p></div>
       </section>
-      <section className="contact-return"><Link href="/work">See what we&apos;ve made <span aria-hidden="true">→</span></Link></section>
+      <section className="contact-return"><Link href="/services">Explore our services <span aria-hidden="true">→</span></Link></section>
       <SiteFooter />
     </main>
   );

@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import Image from "next/image";
 import Link from "next/link";
 import { SiteFooter } from "../_components/SiteFooter";
 import { SiteNav } from "../_components/SiteNav";
@@ -22,6 +23,9 @@ export default function StudioPage() {
       <section className="page-hero page-hero-studio">
         <h1>Production changed.<br /><em>So did we.</em></h1>
         <p className="page-lede">Relix is an independent creative studio built to turn the newest image-making technology into work with an unmistakably human point of view.</p>
+      </section>
+      <section className="page-image" aria-label="The Relix studio at work">
+        <Image src="/editorial/studio.jpg" alt="A small creative team directing moving imagery together in a dark film studio" fill sizes="100vw" priority />
       </section>
       <section className="studio-manifesto">
         <p>AI doesn&apos;t make the idea.<br />It makes <em>more idea</em> possible.</p>

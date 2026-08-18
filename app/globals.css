@@ -126,6 +126,8 @@ footer p { margin: 0; color: rgba(255,255,255,.45); }
 .page-hero-orange h1 em { color: var(--ink); }
 .page-hero-orange .page-lede { color: rgba(255,255,255,.78); }
 .page-hero-studio { color: var(--ink); background: var(--acid); }
+.page-image { position: relative; min-height: clamp(360px, 58vw, 820px); overflow: hidden; background: #081723; }
+.page-image img { object-fit: cover; }
 .page-hero-studio h1 em { color: var(--orange); }
 
 .work-index { padding-top: 80px; }
