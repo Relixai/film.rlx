@@ -7,7 +7,7 @@ export function SiteNav({ overlay = false }: { overlay?: boolean }) {
         <span className="brand-mark">R</span><span>RELIX</span>
       </Link>
       <div className="nav-links">
-        <Link href="/work">Work</Link><Link href="/services">Services</Link><Link href="/studio">Studio</Link>
+        <Link href="/work">Work</Link><Link href="/services">Services</Link><Link href="/process">Process</Link><Link href="/studio">Studio</Link><Link href="/insights">Insights</Link>
       </div>
       <Link className="nav-cta" href="/contact">Start a project <span aria-hidden="true">↗</span></Link>
     </nav>

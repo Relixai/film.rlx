@@ -29,7 +29,7 @@ test("server-renders the Relix agency site", async () => {
 });
 
 test("renders every agency route", async () => {
-  const routes = ["/work", "/work/eclipse", "/work/new-orbit", "/work/afterimage", "/services", "/studio", "/contact"];
+  const routes = ["/work", "/work/eclipse", "/work/new-orbit", "/work/afterimage", "/services", "/process", "/studio", "/insights", "/contact"];
   for (const route of routes) {
     const response = await render(route);
     assert.equal(response.status, 200, route);
