@@ -13,7 +13,7 @@ button, a { -webkit-tap-highlight-color: transparent; }
 .hero-shade { position: absolute; inset: 0; background: linear-gradient(90deg, rgba(3,10,18,.92) 0%, rgba(3,10,18,.53) 42%, rgba(3,10,18,.05) 76%), linear-gradient(0deg, rgba(3,10,18,.62), transparent 45%); }
 .nav { position: relative; z-index: 3; display: grid; grid-template-columns: auto 1fr auto; align-items: center; padding: 24px 4vw; border-bottom: 1px solid var(--line); font-size: 11px; letter-spacing: .1em; text-transform: uppercase; }
 .brand { justify-self: start; display: flex; align-items: center; gap: 10px; font-weight: 800; letter-spacing: .16em; }
-.brand-mark { display: grid; place-items: center; width: 29px; height: 29px; color: var(--ink); background: var(--acid); border-radius: 50%; font-size: 13px; letter-spacing: 0; }
+.brand-logo { display: block; width: 38px; height: 38px; }
 .nav-links { display: flex; justify-content: center; gap: clamp(16px, 2.2vw, 36px); }
 .nav-links a { opacity: .68; transition: opacity .2s; }
 .nav-links a:hover, .nav-links a:focus-visible { opacity: 1; }
