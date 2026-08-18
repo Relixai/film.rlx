@@ -30,16 +30,9 @@ Set `NEXT_PUBLIC_SITE_URL` to the final public URL so social previews, robots, a
 
 Import this repository into Vercel. The framework preset, install command, build command, and output settings are detected automatically. Add `NEXT_PUBLIC_SITE_URL` in the project environment variables before the production deployment.
 
-### Any Node or container host
+### Any Node host
 
-The project uses Next.js standalone output. Build with `npm run build`, then run the generated `.next/standalone/server.js` with Node. Copy `public` and `.next/static` alongside the standalone output when packaging manually.
-
-The included `Dockerfile` performs those steps automatically:
-
-```bash
-docker build -t relix-film-studio .
-docker run -p 3000:3000 -e NEXT_PUBLIC_SITE_URL=https://your-domain.com relix-film-studio
-```
+Run `npm ci`, `npm run build`, and `npm start`. Set `PORT` and `NEXT_PUBLIC_SITE_URL` in the host environment as needed.
 
 ## Checks
 
