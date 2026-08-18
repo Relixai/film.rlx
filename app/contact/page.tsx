@@ -4,8 +4,9 @@ import { SiteFooter } from "../_components/SiteFooter";
 import { SiteNav } from "../_components/SiteNav";
 
 export const metadata: Metadata = {
-  title: "Contact",
-  description: "Start an AI video production project with Relix.",
+  title: "Relix AI",
+  description: "An AI video production studio.",
+  alternates: { canonical: "/contact" },
 };
 
 export default function ContactPage() {
@@ -27,7 +28,7 @@ export default function ContactPage() {
       </section>
       <section className="contact-details">
         <div><a href="mailto:hello@relix.ai">hello@relix.ai</a></div>
-        <div><a href="mailto:projects@relix.ai">projects@relix.ai</a></div>
+        <div><a href="mailto:caleb@relix.ai">caleb@relix.ai</a></div>
         <div><p>London · New York · Los Angeles</p></div>
         <div><p><a href="https://www.instagram.com/relix.ai">Instagram</a> · <a href="https://www.linkedin.com/company/relix">LinkedIn</a></p></div>
       </section>

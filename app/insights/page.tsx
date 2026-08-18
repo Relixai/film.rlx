@@ -5,8 +5,9 @@ import { SiteFooter } from "../_components/SiteFooter";
 import { SiteNav } from "../_components/SiteNav";
 
 export const metadata: Metadata = {
-  title: "Insights",
-  description: "Notes from Relix on AI video direction, production systems, and building distinctive visual worlds.",
+  title: "Relix AI",
+  description: "An AI video production studio.",
+  alternates: { canonical: "/insights" },
 };
 
 const insights = [

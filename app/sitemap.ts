@@ -1,5 +1,5 @@
 import type { MetadataRoute } from "next";
-const baseUrl = process.env.NEXT_PUBLIC_SITE_URL ?? "https://film.relix.ai";
+const baseUrl = process.env.NEXT_PUBLIC_SITE_URL ?? "https://relix.ai";
 
 export default function sitemap(): MetadataRoute.Sitemap {
   const staticPages = ["", "/services", "/process", "/studio", "/insights", "/contact"];

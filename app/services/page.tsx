@@ -5,8 +5,9 @@ import { SiteFooter } from "../_components/SiteFooter";
 import { SiteNav } from "../_components/SiteNav";
 
 export const metadata: Metadata = {
-  title: "Services",
-  description: "AI commercials, product films, brand stories, and always-on video content from Relix.",
+  title: "Relix AI",
+  description: "An AI video production studio.",
+  alternates: { canonical: "/services" },
 };
 
 const offers = [
