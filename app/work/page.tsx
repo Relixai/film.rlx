@@ -15,7 +15,6 @@ export default function WorkPage() {
     <main>
       <SiteNav />
       <section className="page-hero page-hero-paper">
-        <p className="section-tag">[ Selected work / 2025—26 ]</p>
         <h1>Ideas that<br /><em>couldn&apos;t exist.</em></h1>
         <p className="page-lede">Film craft and generative production, combined to give ambitious ideas a world of their own.</p>
       </section>
@@ -25,7 +24,7 @@ export default function WorkPage() {
             <Link className="project-link" href={`/work/${project.slug}`}>
               <ProjectArtwork project={project} priority={index === 0} />
               <div className="project-meta">
-                <div><span>{project.index} / {project.category}</span><h2>{project.title}</h2></div>
+                <div><h2>{project.title}</h2></div>
                 <p>{project.summary}</p><span className="project-arrow" aria-hidden="true">↗</span>
               </div>
             </Link>
@@ -33,7 +32,6 @@ export default function WorkPage() {
         ))}
       </section>
       <section className="next-cta">
-        <p className="section-tag section-tag-light">[ Have a brief? ]</p>
         <h2>Let&apos;s make the next<br /><em>one together.</em></h2>
         <Link href="/contact">Start a project <span aria-hidden="true">↗</span></Link>
       </section>

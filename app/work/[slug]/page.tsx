@@ -41,29 +41,27 @@ export default async function ProjectPage({ params }: Props) {
     <main>
       <SiteNav />
       <section className="case-hero">
-        <p className="section-tag section-tag-light">[ {project.index} / {project.category} ]</p>
         <h1>{project.title}</h1>
         <p>{project.summary}</p>
       </section>
       <section className="case-film"><ProjectArtwork project={project} priority /></section>
       <section className="case-overview">
         <div className="case-facts">
-          <div><span>CLIENT</span><p>{project.client}</p></div><div><span>YEAR</span><p>{project.year}</p></div><div><span>FORMAT</span><p>{project.category}</p></div><div><span>RUNTIME</span><p>{project.runtime}</p></div>
+          <p>{project.client}</p><p>{project.year}</p><p>{project.category}</p>
         </div>
         <h2>{project.headline}</h2>
       </section>
       <section className="case-story">
-        <article><span>01 / THE CHALLENGE</span><p>{project.challenge}</p></article>
-        <article><span>02 / THE APPROACH</span><p>{project.approach}</p></article>
-        <article><span>03 / THE OUTCOME</span><p>{project.outcome}</p></article>
+        <article><h3>The challenge</h3><p>{project.challenge}</p></article>
+        <article><h3>The approach</h3><p>{project.approach}</p></article>
+        <article><h3>The outcome</h3><p>{project.outcome}</p></article>
       </section>
       <section className="case-services">
-        <p className="section-tag">[ Scope ]</p><h2>What we did.</h2>
+        <h2>What we did.</h2>
         <ul>{project.services.map((service) => <li key={service}>{service}</li>)}</ul>
       </section>
       <section className="next-project">
-        <p className="section-tag section-tag-light">[ Next project ]</p>
-        <Link href={`/work/${nextProject.slug}`}><span>{nextProject.category}</span><strong>{nextProject.title}</strong><i aria-hidden="true">↗</i></Link>
+        <Link href={`/work/${nextProject.slug}`}><strong>{nextProject.title}</strong><i aria-hidden="true">↗</i></Link>
       </section>
       <SiteFooter />
     </main>

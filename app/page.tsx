@@ -6,17 +6,17 @@ import { SiteNav } from "./_components/SiteNav";
 import { projects } from "./_data/projects";
 
 const services = [
-  { number: "01", title: "AI Commercials", text: "Campaign films and paid social built for attention, iteration, and scale." },
-  { number: "02", title: "Product Films", text: "Impossible product worlds with no sets, shipping, or production ceilings." },
-  { number: "03", title: "Brand Stories", text: "Narrative-led films that make a new brand universe feel instantly real." },
-  { number: "04", title: "Always-on Content", text: "A repeatable creative engine for the formats your audience lives in." },
+  { title: "AI Commercials", text: "Campaign films and paid social built for attention, iteration, and scale." },
+  { title: "Product Films", text: "Impossible product worlds with no sets, shipping, or production ceilings." },
+  { title: "Brand Stories", text: "Narrative-led films that make a new brand universe feel instantly real." },
+  { title: "Always-on Content", text: "A repeatable creative engine for the formats your audience lives in." },
 ];
 
 const steps = [
-  ["01", "Direction", "We find the idea, audience truth, and visual territory worth owning."],
-  ["02", "Worldbuilding", "We design characters, environments, motion language, and a locked visual system."],
-  ["03", "Production", "Our AI-native pipeline turns approved frames into polished moving image."],
-  ["04", "Finish", "Editorial, sound, grade, titles, and every cutdown—delivered ready to launch."],
+  ["Direction", "We find the idea, audience truth, and visual territory worth owning."],
+  ["Worldbuilding", "We design characters, environments, motion language, and a locked visual system."],
+  ["Production", "Our AI-native pipeline turns approved frames into polished moving image."],
+  ["Finish", "Editorial, sound, grade, titles, and every cutdown—delivered ready to launch."],
 ];
 
 export default function Home() {
@@ -28,16 +28,13 @@ export default function Home() {
         <Image className="hero-image" src="/relix-hero.png" alt="A cinematic figure approaching a red monolith in a desert at dusk" fill priority sizes="100vw" />
         <div className="hero-shade" />
         <div className="hero-copy">
-          <p className="eyebrow"><span /> AI video production studio</p>
           <h1>Impossible stories.<br /><em>Made visible.</em></h1>
           <p className="hero-lede">We combine generative AI, film craft, and bold creative direction to make video that moves at the speed of culture.</p>
           <Link className="primary-cta" href="/work">View our work <span aria-hidden="true">↗</span></Link>
         </div>
-        <p className="hero-index">RELIX / 01 — 25</p>
       </section>
 
       <section className="manifesto" id="studio">
-        <p className="section-tag">[ A new kind of production company ]</p>
         <p className="manifesto-copy">Big-screen imagination.<br /><span>Built for now.</span></p>
         <div className="manifesto-bottom">
           <p>We&apos;re a creative studio for the generative era. Directors, designers, and AI artists working as one team—from first thought to final frame.</p>
@@ -47,14 +44,14 @@ export default function Home() {
 
       <section className="work" id="work">
         <div className="section-head">
-          <div><p className="section-tag">[ Selected work ]</p><h2>Films from<br />another reality.</h2></div>
+          <div><h2>Films from<br />another reality.</h2></div>
           <p>Created for ambitious brands and artists who want to be remembered, not just seen.</p>
         </div>
 
         <article className="project project-large">
           <Link className="project-link" href={`/work/${projects[0].slug}`}>
             <ProjectArtwork project={projects[0]} />
-            <div className="project-meta"><div><span>{projects[0].index} / {projects[0].category}</span><h3>{projects[0].title}</h3></div><p>{projects[0].summary}</p><span className="project-arrow" aria-hidden="true">↗</span></div>
+            <div className="project-meta"><div><h3>{projects[0].title}</h3></div><p>{projects[0].summary}</p><span className="project-arrow" aria-hidden="true">↗</span></div>
           </Link>
         </article>
 
@@ -63,7 +60,7 @@ export default function Home() {
             <article className={`project${index === 1 ? " project-offset" : ""}`} key={project.slug}>
               <Link className="project-link" href={`/work/${project.slug}`}>
                 <ProjectArtwork project={project} />
-                <div className="project-meta"><div><span>{project.index} / {project.category}</span><h3>{project.title}</h3></div><p>{project.summary}</p><span className="project-arrow" aria-hidden="true">↗</span></div>
+                <div className="project-meta"><div><h3>{project.title}</h3></div><p>{project.summary}</p><span className="project-arrow" aria-hidden="true">↗</span></div>
               </Link>
             </article>
           ))}
@@ -72,14 +69,13 @@ export default function Home() {
 
       <section className="services" id="services">
         <div className="services-intro">
-          <p className="section-tag section-tag-light">[ What we make ]</p>
           <h2>One studio.<br /><em>Every frame.</em></h2>
           <p>From a single launch film to an always-on content system, we build the right production around the idea—not the other way around.</p>
         </div>
         <div className="service-list">
           {services.map((service) => (
-            <article className="service" key={service.number}>
-              <span>{service.number}</span><h3>{service.title}</h3><p>{service.text}</p><span className="service-plus" aria-hidden="true">+</span>
+            <article className="service" key={service.title}>
+              <h3>{service.title}</h3><p>{service.text}</p><span className="service-plus" aria-hidden="true">+</span>
             </article>
           ))}
         </div>
@@ -87,12 +83,11 @@ export default function Home() {
 
       <section className="process">
         <div className="process-head">
-          <p className="section-tag">[ How it works ]</p>
           <h2>Human taste.<br /><span>Machine velocity.</span></h2>
           <p>AI makes production faster. Our people make the work worth watching. You collaborate with one senior team through a clear, proven process.</p>
         </div>
         <div className="steps">
-          {steps.map(([n, title, text]) => <article className="step" key={n}><span>{n}</span><h3>{title}</h3><p>{text}</p></article>)}
+          {steps.map(([title, text]) => <article className="step" key={title}><h3>{title}</h3><p>{text}</p></article>)}
         </div>
       </section>
 
@@ -104,14 +99,12 @@ export default function Home() {
       </section>
 
       <section className="quote">
-        <p className="section-tag">[ From our collaborators ]</p>
         <blockquote>“Relix didn&apos;t just make the film we imagined. They found the version we didn&apos;t know was possible.”</blockquote>
         <div className="quote-credit"><span className="avatar">AM</span><p><strong>Alex Morgan</strong><br />Global Brand Director, Arc</p></div>
       </section>
 
       <section className="contact" id="contact">
         <div className="contact-orbit" aria-hidden="true"><span>R</span></div>
-        <p className="section-tag section-tag-light">[ Your next film starts here ]</p>
         <h2>Let&apos;s make<br /><em>something unreal.</em></h2>
         <a className="contact-link" href="mailto:hello@relix.ai">hello@relix.ai <span aria-hidden="true">↗</span></a>
       </section>
