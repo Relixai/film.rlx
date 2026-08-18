@@ -1,3 +1,9 @@
+import Link from "next/link";
+import { ProjectArtwork } from "./_components/ProjectArtwork";
+import { SiteFooter } from "./_components/SiteFooter";
+import { SiteNav } from "./_components/SiteNav";
+import { projects } from "./_data/projects";
+
 const services = [
   { number: "01", title: "AI Commercials", text: "Campaign films and paid social built for attention, iteration, and scale." },
   { number: "02", title: "Product Films", text: "Impossible product worlds with no sets, shipping, or production ceilings." },
@@ -16,23 +22,15 @@ export default function Home() {
   return (
     <main>
       <section className="hero" id="top">
-        <nav className="nav" aria-label="Main navigation">
-          <a className="brand" href="#top" aria-label="Relix home">
-            <span className="brand-mark">R</span><span>RELIX</span>
-          </a>
-          <div className="nav-links">
-            <a href="#work">Work</a><a href="#services">Services</a><a href="#studio">Studio</a>
-          </div>
-          <a className="nav-cta" href="#contact">Start a project <span aria-hidden="true">↗</span></a>
-        </nav>
+        <SiteNav overlay />
 
-        <img className="hero-image" src="/relix-hero.png" alt="A cinematic figure approaching a red monolith in a desert at dusk" />
+        <img className="hero-image" src="/relix-hero.png" alt="A cinematic figure approaching a red monolith in a desert at dusk" width="1672" height="941" fetchPriority="high" />
         <div className="hero-shade" />
         <div className="hero-copy">
           <p className="eyebrow"><span /> AI video production studio</p>
           <h1>Impossible stories.<br /><em>Made visible.</em></h1>
           <p className="hero-lede">We combine generative AI, film craft, and bold creative direction to make video that moves at the speed of culture.</p>
-          <a className="primary-cta" href="#work">View our work <span aria-hidden="true">↓</span></a>
+          <Link className="primary-cta" href="/work">View our work <span aria-hidden="true">↗</span></Link>
         </div>
         <p className="hero-index">RELIX / 01 — 25</p>
       </section>
@@ -53,29 +51,21 @@ export default function Home() {
         </div>
 
         <article className="project project-large">
-          <div className="project-media project-eclipse">
-            <img src="/relix-hero.png" alt="Eclipse campaign film frame" />
-            <span className="play" aria-hidden="true">▶</span>
-            <span className="runtime">00:45</span>
-          </div>
-          <div className="project-meta"><div><span>01 / CAMPAIGN FILM</span><h3>Eclipse</h3></div><p>A fashion world shaped by light, distance, and desire.</p><span className="project-arrow" aria-hidden="true">↗</span></div>
+          <Link className="project-link" href={`/work/${projects[0].slug}`}>
+            <ProjectArtwork project={projects[0]} />
+            <div className="project-meta"><div><span>{projects[0].index} / {projects[0].category}</span><h3>{projects[0].title}</h3></div><p>{projects[0].summary}</p><span className="project-arrow" aria-hidden="true">↗</span></div>
+          </Link>
         </article>
 
         <div className="project-grid">
-          <article className="project">
-            <div className="project-media project-orbit">
-              <div className="planet" /><div className="bottle">RELIX</div>
-              <span className="play" aria-hidden="true">▶</span><span className="runtime">00:30</span>
-            </div>
-            <div className="project-meta"><div><span>02 / PRODUCT FILM</span><h3>New Orbit</h3></div><p>Skincare, reimagined beyond gravity.</p><span className="project-arrow" aria-hidden="true">↗</span></div>
-          </article>
-          <article className="project project-offset">
-            <div className="project-media project-afterimage">
-              <div className="sun" /><div className="runner"><i /><i /><i /></div>
-              <span className="play" aria-hidden="true">▶</span><span className="runtime">01:05</span>
-            </div>
-            <div className="project-meta"><div><span>03 / BRAND STORY</span><h3>Afterimage</h3></div><p>Performance lives one second ahead.</p><span className="project-arrow" aria-hidden="true">↗</span></div>
-          </article>
+          {projects.slice(1).map((project, index) => (
+            <article className={`project${index === 1 ? " project-offset" : ""}`} key={project.slug}>
+              <Link className="project-link" href={`/work/${project.slug}`}>
+                <ProjectArtwork project={project} />
+                <div className="project-meta"><div><span>{project.index} / {project.category}</span><h3>{project.title}</h3></div><p>{project.summary}</p><span className="project-arrow" aria-hidden="true">↗</span></div>
+              </Link>
+            </article>
+          ))}
         </div>
       </section>
 
@@ -125,12 +115,7 @@ export default function Home() {
         <a className="contact-link" href="mailto:hello@relix.ai">hello@relix.ai <span aria-hidden="true">↗</span></a>
       </section>
 
-      <footer>
-        <a className="brand footer-brand" href="#top"><span className="brand-mark">R</span><span>RELIX</span></a>
-        <div><a href="#work">Work</a><a href="#services">Services</a><a href="#studio">Studio</a></div>
-        <div><a href="https://www.instagram.com/relix.ai">Instagram</a><a href="https://x.com/relix_ai">X / Twitter</a><a href="https://www.linkedin.com/company/relix">LinkedIn</a></div>
-        <p>© 2026 Relix AI<br />All rights reserved.</p>
-      </footer>
+      <SiteFooter />
     </main>
   );
 }
