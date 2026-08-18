@@ -1,4 +1,5 @@
 import Link from "next/link";
+import Image from "next/image";
 import { ProjectArtwork } from "./_components/ProjectArtwork";
 import { SiteFooter } from "./_components/SiteFooter";
 import { SiteNav } from "./_components/SiteNav";
@@ -24,7 +25,7 @@ export default function Home() {
       <section className="hero" id="top">
         <SiteNav overlay />
 
-        <img className="hero-image" src="/relix-hero.png" alt="A cinematic figure approaching a red monolith in a desert at dusk" width="1672" height="941" fetchPriority="high" />
+        <Image className="hero-image" src="/relix-hero.png" alt="A cinematic figure approaching a red monolith in a desert at dusk" fill priority sizes="100vw" />
         <div className="hero-shade" />
         <div className="hero-copy">
           <p className="eyebrow"><span /> AI video production studio</p>

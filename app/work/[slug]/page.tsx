@@ -1,6 +1,5 @@
 import type { Metadata } from "next";
 import Link from "next/link";
-import { headers } from "next/headers";
 import { notFound } from "next/navigation";
 import { ProjectArtwork } from "../../_components/ProjectArtwork";
 import { SiteFooter } from "../../_components/SiteFooter";
@@ -13,19 +12,13 @@ export function generateStaticParams() {
   return projects.map((project) => ({ slug: project.slug }));
 }
 
-async function requestOrigin() {
-  const requestHeaders = await headers();
-  const host = requestHeaders.get("x-forwarded-host") ?? requestHeaders.get("host") ?? "relix-ai-video-studio.xalebf.chatgpt.site";
-  const protocol = requestHeaders.get("x-forwarded-proto") ?? (host.includes("localhost") ? "http" : "https");
-  return `${protocol}://${host}`;
-}
-
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const { slug } = await params;
   const project = getProject(slug);
   if (!project) return { title: { absolute: "Project not found — Relix" } };
 
-  const socialImage = project.image ? `${await requestOrigin()}${project.image}` : null;
+  const siteUrl = process.env.NEXT_PUBLIC_SITE_URL ?? "https://film.relix.ai";
+  const socialImage = project.image ? new URL(project.image, siteUrl).toString() : null;
   const title = `${project.title} — Relix`;
   const images = socialImage ? [{ url: socialImage, alt: project.imageAlt }] : [];
 

@@ -1,10 +1,11 @@
+import Image from "next/image";
 import type { Project } from "../_data/projects";
 
 export function ProjectArtwork({ project, priority = false }: { project: Project; priority?: boolean }) {
   if (project.artwork === "eclipse") {
     return (
       <div className="project-media project-eclipse">
-        <img src={project.image!} alt={project.imageAlt!} width="1672" height="941" loading={priority ? "eager" : "lazy"} fetchPriority={priority ? "high" : "auto"} />
+        <Image src={project.image!} alt={project.imageAlt!} fill priority={priority} sizes="(max-width: 720px) 100vw, 92vw" />
         <span className="play" aria-hidden="true">▶</span><span className="runtime">{project.runtime}</span>
       </div>
     );

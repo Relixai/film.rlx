@@ -1,7 +1,7 @@
 import type { MetadataRoute } from "next";
 import { projects } from "./_data/projects";
 
-const baseUrl = "https://relix-ai-video-studio.xalebf.chatgpt.site";
+const baseUrl = process.env.NEXT_PUBLIC_SITE_URL ?? "https://film.relix.ai";
 
 export default function sitemap(): MetadataRoute.Sitemap {
   const staticPages = ["", "/work", "/services", "/process", "/studio", "/insights", "/contact"];
