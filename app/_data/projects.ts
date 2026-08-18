@@ -10,9 +10,9 @@ export type Project = {
   approach: string;
   outcome: string;
   services: string[];
-  artwork: "eclipse" | "orbit" | "afterimage";
-  image?: string;
-  imageAlt?: string;
+  video: string;
+  image: string;
+  imageAlt: string;
 };
 
 export const projects: Project[] = [
@@ -28,9 +28,9 @@ export const projects: Project[] = [
     approach: "We grouped the work around movement, scale, and human presence, then built a new editorial spine that lets each world hand naturally into the next. Original sound design and a restrained grade hold the changing visual languages together.",
     outcome: "A flagship studio reel for 2026, delivered as a cinematic master with shorter edits for social, presentations, and new-business conversations.",
     services: ["Creative direction", "AI worldbuilding", "Virtual cinematography", "Editorial", "Sound design"],
-    artwork: "eclipse",
-    image: "/relix-hero.png",
-    imageAlt: "A figure approaching a crimson monolith in a desert at dusk",
+    video: "/reels/worlds-in-motion.mp4",
+    image: "/reels/worlds-in-motion.png",
+    imageAlt: "A lone figure crossing a desert toward a glowing crimson monolith",
   },
   {
     slug: "objects-of-desire",
@@ -44,7 +44,9 @@ export const projects: Project[] = [
     approach: "We treated each object as a character, designing its material behavior, environment, camera language, and rhythm before building the final sequences into one fluid visual study.",
     outcome: "A focused category reel and a library of loopable product moments ready for social, pitch decks, launch films, and retail screens.",
     services: ["Product visualization", "Material studies", "Motion design", "Editorial", "Sound design"],
-    artwork: "orbit",
+    video: "/reels/objects-of-desire.mp4",
+    image: "/reels/objects-of-desire.png",
+    imageAlt: "A frosted glass serum bottle floating among coral crystal rings",
   },
   {
     slug: "human-velocity",
@@ -58,7 +60,9 @@ export const projects: Project[] = [
     approach: "We combined expressive character motion with repeated horizons, delayed shadows, and changing light. Sports-film pacing keeps the imagery grounded even as the environments become impossible.",
     outcome: "A high-energy master reel with modular sequences that can open campaign treatments, social edits, and sports-focused creative presentations.",
     services: ["Film direction", "AI character development", "Motion studies", "Editorial", "Sound design"],
-    artwork: "afterimage",
+    video: "/reels/human-velocity.mp4",
+    image: "/reels/human-velocity.png",
+    imageAlt: "A runner sprinting across volcanic ground at an amber sunrise",
   },
 ];
 
